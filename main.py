@@ -46,16 +46,10 @@ def classify(a):
 with header:
     titl, imga = st.beta_columns(2)
     titl.title('UNO - SDG Classifier')
-    
-    
    
-
 with body:
     rawtext = st.text_area('Enter Text Here')
-  
-  
     sample_col, upload_col = st.beta_columns(2)
-    
     upload_col.subheader(' [OR] ')
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
