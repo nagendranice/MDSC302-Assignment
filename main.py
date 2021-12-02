@@ -43,9 +43,9 @@ def classify(a):
 
 with header:
     titl, imga = st.beta_columns(2)
-    titl.title('SDG Classifier')
+    titl.title('UNO SDG CLASSIFIER')
     imga.image('1sdg_logo.svg.gif')
-    
+    upload_col = st.beta_columns(1)
     upload_col.subheader()
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
@@ -58,7 +58,7 @@ with header:
                 st.write('Please enter text or upload a file to see the Classification')
             else:
                 result = classify(rawtext)
-                st.header('Sdg Classification :)')
+                st.header('SDG Classification :)')
                 #res, plot = st.beta_columns(2)
                 st.dataframe(result)
                 df = pd.DataFrame(result, columns = ["Score"])
