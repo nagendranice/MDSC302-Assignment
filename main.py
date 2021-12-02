@@ -46,7 +46,7 @@ with header:
     titl.title('UNO SDG CLASSIFIER')
     imga.image('1sdg_logo.svg.gif')
 with body:
-    upload_col = st.beta_columns(1)
+    upload_col = st.beta_columns(2)
    
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
