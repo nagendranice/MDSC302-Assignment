@@ -19,7 +19,7 @@ classify_container = st.beta_container()
 
 
 def classify(a):
-    filename = 'model.pkl'
+    filename = 'model.sav'
     model_reloaded = pickle.load(open(filename, 'rb'))
     
     te =[]
