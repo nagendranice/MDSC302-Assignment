@@ -50,8 +50,8 @@ with header:
 with body:
     rawtext = st.text_area('Enter Text Here')
     sample_col, upload_col = st.beta_columns(2)
-    upload_col.subheader(' [OR] ')
-    uploaded_file = upload_col.file_uploader(
+    sample_col.subheader(' [OR] ')
+    uploaded_file = sample_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
         rawtext = str(uploaded_file.read(), 'utf-8')
