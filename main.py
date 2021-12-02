@@ -1,3 +1,4 @@
+
 from os import write
 import streamlit as st
  
@@ -6,6 +7,7 @@ import numpy as np
 import pickle
 import numpy as np
 import pandas as pd
+## import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 
 
@@ -43,23 +45,28 @@ def classify(a):
 
 with header:
     titl, imga = st.beta_columns(2)
-    titl.title('UNO SDG CLASSIFIER')
-    imga.image('1sdg_logo.svg.gif')
-with body:
-    upload_col = st.beta_columns(2)
+    titl.title('UNO - SDG Classifier')
+    
+    
    
+
+with body:
+  
+    sample_col, upload_col = st.beta_columns(2)
+    
+    
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
         rawtext = str(uploaded_file.read(), 'utf-8')
-    if st.button('Results here'):
+    if st.button('Get Results'):
         with classify_container:
             if rawtext == "":
                 st.header('Classification :)')
                 st.write('Please enter text or upload a file to see the Classification')
             else:
                 result = classify(rawtext)
-                st.header('SDG Classification :)')
+                st.header('Sdg Classifier in numbers :)')
                 #res, plot = st.beta_columns(2)
                 st.dataframe(result)
                 df = pd.DataFrame(result, columns = ["Score"])
