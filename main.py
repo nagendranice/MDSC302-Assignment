@@ -47,27 +47,11 @@ with header:
     imga.image('1sdg_logo.svg.gif')
     
    
-
-with body:
-    rawtext = st.text_area('Enter Text Here')
-    
-
-    sample_col, upload_col = st.beta_columns(2)
-    
-    sample_col.subheader('  [OR]  ')
-    sample = sample_col.selectbox('Or select a sample file',
-                                  ('AsianPaints19_CSR.txt', 'BharatPetroleum19_CSR.txt','BhartiAirtel17_CSR.txt','HdfcBank16_CSR.txt','None'), index=4)
-    if sample != 'None':
-        file = open(sample, "r", encoding='utf-8')
-        #st.write(file)
-        rawtext = file.read()
-
-    upload_col.subheader('  [OR]  ')
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
         rawtext = str(uploaded_file.read(), 'utf-8')
-    if st.button('Get Results'):
+    if st.button('Results here'):
         with classify_container:
             if rawtext == "":
                 st.header('Classification :)')
