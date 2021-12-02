@@ -54,7 +54,7 @@ with body:
     rawtext = st.text_area('Enter Text Here')
   
   
-    upload_col = st.beta_columns(1)
+    sample_col, upload_col = st.beta_columns(2)
     
     upload_col.subheader(' [OR] ')
     uploaded_file = upload_col.file_uploader(
