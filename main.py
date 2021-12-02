@@ -46,7 +46,7 @@ with header:
     titl.title('SDG Classifier')
     imga.image('1sdg_logo.svg.gif')
     
-   
+     upload_col.subheader()
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
@@ -64,10 +64,4 @@ with header:
                 df = pd.DataFrame(result, columns = ["Score"])
                 st.bar_chart(df)
 
-                st.header('Report:')
-                expand = st.beta_expander("Expand to see orignal Report")
-                with expand:
-                	st.write(rawtext)
-    expand_goal = st.beta_expander("United Nation Organisation Sustainable Development Goals [Expand to see]")
-    with expand_goal:
-     st.image('all_goals.jpg')
+               
