@@ -46,7 +46,7 @@ with header:
     titl.title('SDG Classifier')
     imga.image('1sdg_logo.svg.gif')
     
-     upload_col.subheader()
+    upload_col.subheader()
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
