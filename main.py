@@ -48,6 +48,15 @@ with header:
     titl.title('UNO - SDG Classifier')
    
 with body:
+    page_bg_img = '''
+    <style>
+    body {
+    background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+    background-size: cover;
+    }
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
     rawtext = st.text_area('Enter Text Here')
     sample_col, upload_col = st.beta_columns(2)
     sample_col.subheader(' [OR] ')
